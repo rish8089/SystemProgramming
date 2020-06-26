@@ -1,0 +1,17 @@
+#InputTestJson.json
+
+1. There is one ingredient "green_mixture" required for preparing green tea but it doesn't even exists in the coffee machine,
+
+So before checking for an ingredient quantity availability, we should first check whether it exists in the coffee machine.
+
+2. No of outlets are less than total no of beverages
+
+It should be ensured that no of beverages getting prepared in parallel should be equal to no of outlets.
+
+
+#InputTestJson2.json
+
+1. There is one ingredient "green_mixture" required for preparing green tea and it doesn't exist in the coffee machine, but
+   it's required in 0 quantity.
+
+In this case coffee machine should continue with the allocation of ingredients and shouldn't say that the ingredient is not available.
