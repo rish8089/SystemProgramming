@@ -15,6 +15,11 @@ import java.util.concurrent.Executors;
 public class TestClass {
     public static void main(String[] args) throws IOException {
 
+        if(args.length==0) {
+            System.out.println("Test file not passed");
+            System.exit(0);
+        }
+
         CoffeMachine coffeMachine=new CoffeMachine();
         List<Beverage> beverageList=new ArrayList<>();
         init(beverageList,coffeMachine,args[0]);
@@ -34,9 +39,16 @@ public class TestClass {
      * @param beverageList
      * @throws IOException
      */
-    private static void init(List<Beverage> beverageList,CoffeMachine coffeMachine,String testFile) throws IOException {
+    private static void init(List<Beverage> beverageList,CoffeMachine coffeMachine,String testFile) {
         ObjectMapper mapper = new ObjectMapper();
-        Map<?, ?> map = mapper.readValue(TestClass.class.getClassLoader().getResource(testFile), Map.class);
+
+        Map<?, ?> map = null;
+        try {
+            map = mapper.readValue(TestClass.class.getClassLoader().getResource(testFile), Map.class);
+        } catch (Exception e) {
+            System.out.println("Either test file not found or file structure is invalid");
+            System.exit(0);
+        }
 
         //initializing coffee machine object
         LinkedHashMap<?,?> machine=(LinkedHashMap<?,?>)map.get("machine");
