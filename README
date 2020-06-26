@@ -1,0 +1,15 @@
+Instructions to run given jar Coffee Machine-jar-with-dependencies
+
+java -jar Coffee Machine-jar-with-dependencies <InputTestFile>
+
+Sample:
+
+java -jar Coffee Machine-jar-with-dependencies InputTestJson.json
+
+or
+
+java -jar Coffee Machine-jar-with-dependencies InputTestJson2.json
+
+You can add your own test json in src/main/resources/
+
+Make sure your test json structure should be in accordance with given sample test jsons in src/main/resources/
