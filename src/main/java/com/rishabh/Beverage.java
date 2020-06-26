@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Beverage {
     private String name;
+    //stores the ingredient name as key and quantity required as value
     private Map<String,Integer> ingredients;
 
     public Beverage()

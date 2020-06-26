@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class CoffeMachine {
     private int outlets;
+    //stores the ingredient name as key and quantity available as value
     private Map<String, Integer> totalIngredients;
 
     public CoffeMachine() {
